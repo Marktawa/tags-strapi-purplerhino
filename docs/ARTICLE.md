@@ -78,30 +78,34 @@ With Strapi, we can scaffold our API faster and consume the content via APIs usi
 
 Open up your terminal and create an empty project directory to store your project. This folder would serve as the root folder. The frontend and backend code will be stored in subdirectories. I will name my project directory `purplerhino`.
 
-
-    $ mkdir purplerhino
+```bash
+$ mkdir purplerhino
+```
 
 Change the directory to the project directory `purplerhino`.
 
-
-    $ cd purplerhino
+```bash
+$ cd purplerhino
+```
 
 Enable source control for your project by initializing a git repository.
 
-
-    /purplerhino $ git init
+```bash
+/purplerhino $ git init
+```
 
 Create a Strapi app
 
-
-    /purplerhino $ npx create-strapi-app backend --quickstart
+```bash
+/purplerhino $ npx create-strapi-app backend --quickstart
+```
 
 The command above will scaffold a new Strapi project in a directory named `backend`. The `quickstart` flag sets up your Strapi app with an SQLite database.
 
 After successful installation, the Strapi app starts automatically. Open the **Strapi Admin Registration** interface from your web browser at [localhost:1337/admin](http://localhost:1337/admin). Create the admin user for your Strapi application and click **Let's Start**.
 
 
-![Strapi Admin Registration](https://www.dropbox.com/temp_thumb_from_token/s/kivn0uqjh7v6kz1?size_mode=5&preserve_transparency=true)
+![Strapi Admin Registration](https://www.dropbox.com/s/3jss1elab5syu4c/strapi-admin-registration-tinyp.png?raw=1)
 
 # Step 2: Build the Posts collection
 
