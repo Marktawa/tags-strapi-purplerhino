@@ -193,6 +193,39 @@
         }
       },
       {
+        "HashCode": -1361990391,
+        "Kind": "Components.Component",
+        "Name": "frontend.Shared.NavMenu",
+        "AssemblyName": "frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "frontend.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -1300361723,
+        "Kind": "Components.Component",
+        "Name": "frontend.Shared.NavMenu",
+        "AssemblyName": "frontend",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "frontend.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "frontend.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 804196486,
         "Kind": "Components.Component",
         "Name": "frontend.Shared.MainLayout",
@@ -281,39 +314,6 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "frontend.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -1361990391,
-        "Kind": "Components.Component",
-        "Name": "frontend.Shared.NavMenu",
-        "AssemblyName": "frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "frontend.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -1300361723,
-        "Kind": "Components.Component",
-        "Name": "frontend.Shared.NavMenu",
-        "AssemblyName": "frontend",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "frontend.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "frontend.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
