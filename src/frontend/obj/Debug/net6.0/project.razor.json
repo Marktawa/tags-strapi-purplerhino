@@ -140,7 +140,7 @@
         }
       },
       {
-        "HashCode": 2069741995,
+        "HashCode": 621154340,
         "Kind": "Components.Component",
         "Name": "frontend.Pages.PostDetails",
         "AssemblyName": "frontend",
@@ -150,13 +150,23 @@
             "TagName": "PostDetails"
           }
         ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
+          }
+        ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "frontend.Pages.PostDetails"
         }
       },
       {
-        "HashCode": -410600092,
+        "HashCode": -242124901,
         "Kind": "Components.Component",
         "Name": "frontend.Pages.PostDetails",
         "AssemblyName": "frontend",
@@ -164,6 +174,16 @@
         "TagMatchingRules": [
           {
             "TagName": "frontend.Pages.PostDetails"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Id"
+            }
           }
         ],
         "Metadata": {

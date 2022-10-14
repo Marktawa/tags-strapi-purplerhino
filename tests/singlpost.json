@@ -1,0 +1,76 @@
+{
+    "data": {
+        "id": 1,
+        "title": "The UK & Great Britain – What’s the Difference?",
+        "content": "It’s a question we often get asked; The UK, Britain, Great Britain, The British Isles, England… what’s the difference? Well, being the helpful folk that we are, we’ve decided to put forward a helpful cribsheet on just that subject!\n\n### The United Kingdom (UK)\n\nThe UK is short for The United Kingdom of Great Britain and Northern Ireland… quite a mouthful! It is a sovereign state (in the same way as France or the USA) but is made up of four countries; England, Scotland, Wales and Northern Ireland. For Americans, the best analogy would be that the UK is like the USA, whilst its four consistent countries are like states.",
+        "author": "Ben Johnson",
+        "createdAt": "2022-10-12T23:49:16.182Z",
+        "updatedAt": "2022-10-12T23:51:24.989Z",
+        "publishedAt": "2022-10-12T23:51:24.987Z",
+        "image": {
+            "id": 1,
+            "name": "uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+            "alternativeText": "uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+            "caption": "uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+            "width": 1366,
+            "height": 703,
+            "formats": {
+                "thumbnail": {
+                    "name": "thumbnail_uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+                    "hash": "thumbnail_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 245,
+                    "height": 126,
+                    "size": 11.29,
+                    "url": "/uploads/thumbnail_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d.jpg"
+                },
+                "small": {
+                    "name": "small_uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+                    "hash": "small_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 500,
+                    "height": 257,
+                    "size": 48.3,
+                    "url": "/uploads/small_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d.jpg"
+                },
+                "medium": {
+                    "name": "medium_uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+                    "hash": "medium_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 750,
+                    "height": 386,
+                    "size": 107.27,
+                    "url": "/uploads/medium_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d.jpg"
+                },
+                "large": {
+                    "name": "large_uk-vs-great-britain-difference-banner-1366x703-tinyp.jpg",
+                    "hash": "large_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d",
+                    "ext": ".jpg",
+                    "mime": "image/jpeg",
+                    "path": null,
+                    "width": 1000,
+                    "height": 515,
+                    "size": 183.44,
+                    "url": "/uploads/large_uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d.jpg"
+                }
+            },
+            "hash": "uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "size": 205.09,
+            "url": "/uploads/uk_vs_great_britain_difference_banner_1366x703_tinyp_d4ccb43c0d.jpg",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2022-10-12T23:48:33.540Z",
+            "updatedAt": "2022-10-12T23:48:33.540Z"
+        }
+    },
+    "meta": {}
+}
