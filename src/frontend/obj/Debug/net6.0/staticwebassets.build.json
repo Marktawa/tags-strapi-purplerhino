@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BUfmLqVSN9RsOBHtR8F6IK0X3OV4ZvXnOLmNWVuUI7k=",
+  "Hash": "/HA7zqT2QvOtjUO34m5qLwFkBPjqRSi/ndnTBvPlPrA=",
   "Source": "frontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -6832,6 +6832,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/workspaces/tags-strapi-purplerhino/src/frontend/obj/Debug/net6.0/scopedcss/projectbundle/frontend.bundle.scp.css"
+    },
+    {
+      "Identity": "/workspaces/tags-strapi-purplerhino/src/frontend/wwwroot/appsettings.json",
+      "SourceId": "frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/tags-strapi-purplerhino/src/frontend/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/appsettings.json"
+    },
+    {
+      "Identity": "/workspaces/tags-strapi-purplerhino/src/frontend/wwwroot/blazor_strapi_logo.png",
+      "SourceId": "frontend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/workspaces/tags-strapi-purplerhino/src/frontend/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "blazor_strapi_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/blazor_strapi_logo.png"
     },
     {
       "Identity": "/workspaces/tags-strapi-purplerhino/src/frontend/wwwroot/css/app.css",

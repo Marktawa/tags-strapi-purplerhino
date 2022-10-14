@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/workspaces/tags-strapi-purplerhino/src/frontend/Pages/PostDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9zdERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/workspaces/tags-strapi-purplerhino/src/frontend/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
