@@ -6,7 +6,7 @@ This repository serves as a code container for the tutorial I wrote on [Strapi's
 
 ## App Demo
 
-![App Demo](/docs/app-demo.gif)
+![App Demo](/docs/app-demo-b-4x-f5.gif)
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ $ cd tags-strapi-purplerhino
 # navigate to frontend directory
 /tags-strapi-purplerhino $ cd src/frontend
 
-# served at http://localhost:5000
+# served at http://localhost:5024
 /tags-strapi-purplerhino/src/frontend $ dotnet run
 ```
 

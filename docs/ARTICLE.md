@@ -22,10 +22,10 @@ In this tutorial you will learn how to create a simple but blazing fast blog app
 - Here’s a short video demo
 
 
-https://www.youtube.com/watch?v=-0HHEt6j2f0&
+https://youtu.be/qznajT3e8Tg
 
 
-[https://youtu.be/-0HHEt6j2f0](https://youtu.be/-0HHEt6j2f0)
+[How to Build a Blog App using Blazor WASM and Strapi - Video Demo](https://youtu.be/-0HHEt6j2f0)
 
 
 - [Live Demo](https://strapi-blazor-blog.netlify.app/)
@@ -36,18 +36,16 @@ Before you can jump into this content, you need to have a basic understanding of
 
 1. Strapi - [get started here](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html).
 2. Node.js
-3. Shell (Bash)
+3. Blazor
 4. C#
-5. Blazor
+5. Shell (Bash)
 
 The following software should be installed:
 
-- [.NET Core SDK](https://dotnet.microsoft.com/download). *Version 6 at the time of writing*
-- Blazor project templates
+- [.NET SDK](https://dotnet.microsoft.com/download). *Version 6 at the time of writing*
 - **Node** *v14.x.x* or *v16.x.x*. Download Node from the [Download | Node.js page](https://nodejs.org/en/download/). I used Node *v16.14.2*.
-- **npm** or **yarn**. npm ships with your Node installation. If you prefer yarn, install it as an npm package. Check [Installation | Yarn](https://classic.yarnpkg.com/en/docs/install). I used yarn *v1.22.15*.
+- **npm** or **yarn**. npm ships with your Node installation. If you prefer yarn, install it as an npm package. Check [Installation | Yarn](https://classic.yarnpkg.com/en/docs/install). 
     
-
 For a full rundown of all the requirements needed to run a Strapi app, check out the [Hardware and Software requirements](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html#hardware-and-software-requirements).
 
 # Introduction
@@ -181,6 +179,13 @@ module.exports = ({ env }) => ({
 ```
 
 This configuration will provide an API response that will work with the set up of your Blazor frontend app.
+
+- Rebuild your Strapi app and start your server for the changes to take effect.
+
+```bash
+/purplerhino/backend $ yarn build
+/purplerhino/backend $ yarn develop
+```
 
 # **Frontend Setup**
 
@@ -385,6 +390,10 @@ else
 
 }
 ```
+Here's a brief explanation on what the code does:
+- The top section from `@page`to `@inject` is a list of all libraries `Index.razor` needs to use to fetch data from the Strapi API.
+- The next section `@if (allPosts == null)` down to `</section>}` is the html required to render the posts from the Strapi API. The `@foreach` will loop through all the posts and retrieve the `image`, `title` and `id` of each post and display each post in its own card.
+- The `@code` section is C# code. `Post`, `Image` and `PostList` are classes that we will use to map the JSON data from the API response. `allPosts` is an instance of `PostList`. The JSON data from the `url` will parsed into `allPosts` using the `Http.GetFromJsonAsync()` function. The `@foreach` loop will retrieve the URLs of each post's image.
 
 Update the `Shared/NavMenu.razor` file to remove the extra menu from the sidebar. Replace the existing code with the following code:
 
@@ -515,85 +524,24 @@ else
 }
 ```
 
-Now rerun the app and click on the `Read More` button for any post. You will see the full blog post on its own page.
+Here's a brief explanation of what the code does.
+- `@page "/post/{Id}"` refers to the URL of the page to be rendered based on the `Id` of the post
+- `@if (postDetaills == null)` to `</section>` is the markup for rendering the page and uses the post's `title`, `image` and `content` retrieved from the Strapi API.
+- `@code` section contains the classes to populate the data from the Strapi API just like in `Index.razor`, except that the API request is for a single post not all the posts.
 
+Now rerun the app and click on the `Read More` button for any post. You will see the full blog post on its own page.
 
 ![Single post page](https://www.dropbox.com/s/tjt1eau8ay45n13/single-blog-post-page-tinyp.png?raw=1)
 
 # Step 9: Deploy the blog app
 
-Now we have our Strapi backend API and our Blazor frontend app. So we will deploy strapi to Heroku and the Blazor app to Netlify. To deploy Strapi API on Heroku, check out this [article](https://strapi.io/blog/deploying-a-strapi-api-on-heroku).
-
-We can now deploy our Blazor application on any hosting platform. We are deploying our app on [Netlify](https://www.netlify.com/) using Github Actions.
+Now we have our Strapi backend API and our Blazor frontend app working. The next step is app deployment. There are various options available. To deploy Strapi API on Heroku, check out [Deploying a Strapi API on Heroku in 5 min](https://strapi.io/blog/deploying-a-strapi-api-on-heroku). To deploy a Blazor WebAssembly app on Netlify, check out [How to Deploy a Blazor App on Netlify](https://markmunyaka.hashnode.dev/how-to-deploy-a-blazor-app-on-netlify).
 
 
-1. First, create a repo in GitHub and commit your code to that repository.
-2. Login to Netlify and create a new site.
-3. We need a Personal Access Token and Site Id to deploy our app to Netlify. So Go to Profile and generate a Personal Access Token.
-
-
-![Netlify Personal Access Tokens](https://res.cloudinary.com/practicaldev/image/fetch/s--gjBuRBkE--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn.cosmicjs.com/e37c4ff0-fa64-11ea-ac76-ed0a0ac0571c-access-token.PNG)
-
-
-Go to a new site created in Netlify and navigate to site details and copy the `API ID`.
-
-
-![Netlify API ID](https://paper-attachments.dropboxusercontent.com/s_7B915BA17A20925DDCD3A880AE89946807D8A9C38702128574A00FF9B3FB24F0_1635010296013_image.png)
-
-
-Go to repository settings → Click on Secrets → add the above two secrets.
-
-
-![Netlfiy Auth Token and Site ID](https://paper-attachments.dropboxusercontent.com/s_7B915BA17A20925DDCD3A880AE89946807D8A9C38702128574A00FF9B3FB24F0_1635010634194_image.png)
-
-
-The next step is to create a Github action. So click on Actions and then select New Workflow and select the .NET Core template. After that, add the below code to the `yml` file.
-
-```yml
-name: .NET
-
-on:
-    push:
-    branches: [ master ]
-    pull_request:
-    branches: [ master ]
-
-jobs:
-    build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-        run: dotnet restore
-    - name: Build
-        run: dotnet build --configuration Release --no-restore
-    - name: Publish Blazor webassembly using dotnet 
-        #create Blazor WebAssembly dist output folder in the project directory
-        run: dotnet publish -c Release --no-build -o publishoutput
-    - name: Publish generated Blazor webassembly to Netlify
-        uses: netlify/actions/cli@master #uses Netlify Cli actions
-        env: # These are the environment variables added in GitHub Secrets for this repo
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-            args: deploy --dir=publishoutput/wwwroot --prod #push this folder to Netlify
-            secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-```
-
-After deployment you can see the site as live.
-
-
-![Site running on Netlify](https://paper-attachments.dropboxusercontent.com/s_7B915BA17A20925DDCD3A880AE89946807D8A9C38702128574A00FF9B3FB24F0_1635011389468_image.png)
 
 # Conclusion
 
-This article demonstrated how to build a simple blog application using Blazor for frontend and Strapi as the Backend. Strapi has lots of integration with other frameworks, so please check out [Strapi blog](https://strapi.io/blog) for more information.
+This article demonstrated how to build a simple blog application using Blazor for frontend and Strapi as the Backend. Strapi has lots of integration with other frameworks. Check out the [Strapi blog](https://strapi.io/blog) for more interesting tutorials showcasing Strapi's capabilities.
 
-Let me know you have any suggestions and what you will be building with the knowledge.
+Let me know if you have any comments, queries, and suggestions. The Strapi Team is always available to assist you.
 
