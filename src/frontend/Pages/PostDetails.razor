@@ -1,0 +1,76 @@
+@* ./Pages/PostDetails.razor *@
+
+@page "/post/{Id}"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using System.Text.Json.Serialization
+@using Microsoft.Extensions.Configuration;
+@using Models
+@inject IConfiguration Configuration
+
+@if (postDetails == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <section class="text-gray-700 body-font">
+        <div class="container mx-auto flex px-5 pb-24 items-center justify-center flex-col">
+            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">@postDetails.Data.Title</h1>
+            <img class=" mb-10 object-cover object-center rounded" alt="hero" src="@postDetails.Data.Image.Url" style="height:400px;width:900px">
+            <div class=" w-3/5">
+                <div class="mb-8 leading-relaxed">@((MarkupString)postDetails.Data.Content)</div>
+            </div>
+            <div class="p-2 w-full">
+                <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" @onclick="NavigateToIndexComponent">Back</button>
+            </div>
+        </div>
+    </section>
+}
+
+@code {
+    [Parameter] public string Id { get; set; }
+
+    private PostSingle postDetails = null;
+
+    public string strapi_api_url;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
+        var url = "{STRAPI_API_URL}/api/posts/{Id}?populate=*";
+        url = url.Replace("{STRAPI_API_URL}", strapi_api_url);
+        url = url.Replace("{Id}", Id);
+        postDetails = await Http.GetFromJsonAsync<PostSingle>(url);
+
+        if (postDetails.Data != null)
+        {
+            postDetails.Data.Image.Url = strapi_api_url + postDetails.Data.Image.Url;
+        }
+    }
+
+    private void NavigateToIndexComponent()
+    {
+        NavigationManager.NavigateTo("");
+    }
+
+    public class PostSingle
+    {
+        public Data Data { get; set; }
+    }
+     public class Data
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
+        public Image Image { get; set; }
+    }
+
+    public class Image
+    {
+        public string Url { get; set; }
+    }
+
+}

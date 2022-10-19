@@ -1,0 +1,87 @@
+﻿@* ./Pages/Index.razor *@
+
+@page "/"
+@inject HttpClient Http
+@using Microsoft.Extensions.Configuration;
+@using Models
+@inject IConfiguration Configuration
+
+@if (allPosts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <section class="text-gray-600 body-font">
+    <div class="container px-5 py-4 mx-auto">
+        <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">Strapi Blazor Blog App</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">British History - From the Anglo-Saxon era to present day Britain.</p>
+            <div class="flex mt-6 justify-center">
+                <div class="w-16 h-1 rounded-full bg-indigo-500 inline-flex"></div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -m-3">
+            @foreach (var post in allPosts.data)
+                {
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-gray-100 p-6 rounded-lg">
+                            <img class="h-40 rounded w-full object-cover object-center mb-6" src="@post.Image.Url"
+                        alt="content">
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">@post.Title</h2>
+                            <NavLink href="@($"post/{post.Id.ToString()}")">
+                                <a class="text-indigo-500 inline-flex items-center">
+                                    Read More
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </NavLink>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+
+@code {
+    private PostList allPosts = null;
+    public string strapi_api_url;
+
+    protected override async Task OnInitializedAsync()
+    {
+        strapi_api_url = Configuration["AppSettings:STRAPI_API_URL"];
+        var url = "{STRAPI_API_URL}/api/posts?populate=*";
+        allPosts = await Http.GetFromJsonAsync<PostList>(url.Replace("{STRAPI_API_URL}", strapi_api_url));
+        if (allPosts.data != null)
+        {
+            foreach (var post in allPosts.data)
+            {
+                post.Image.Url = strapi_api_url + post.Image.Url;
+            }
+        }
+    }
+
+    public class Post
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string Author { get; set; }
+        public Image Image { get; set; }
+    }
+
+    public class Image
+    {
+        public string Url { get; set; }
+    }
+
+    public class PostList
+    {
+        public List<Post> data { get; set; }
+    }
+
+}
